@@ -10,6 +10,7 @@ namespace EveryWorkflow\ImportExportBundle;
 
 use EveryWorkflow\ImportExportBundle\DependencyInjection\ImportExportExtension;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 class EveryWorkflowImportExportBundle extends Bundle
@@ -22,7 +23,7 @@ class EveryWorkflowImportExportBundle extends Bundle
         parent::build($container);
     }
 
-    public function getContainerExtension()
+    public function getContainerExtension(): ?ExtensionInterface
     {
         return new ImportExportExtension();
     }
